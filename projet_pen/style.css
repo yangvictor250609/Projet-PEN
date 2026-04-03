@@ -108,23 +108,3 @@ body {
   display: none;
   z-index: 300;
 }
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-
-  .menu {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-
-  .content {
-    margin-left: 0;
-    padding: 20px;
-  }
-}
-
-* {
-  background-color: white !important;
-  color: black !important;
-}

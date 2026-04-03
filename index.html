@@ -268,6 +268,31 @@
   <button onclick="showMini('mini_remarques')">Remarques</button>
 </div>
 
+<!-- SCRIPT -->
+<script>
+  function showMini(panelId) {
+    // Cacher tous les mini-panels
+    const panels = document.querySelectorAll('.mini-panel');
+    panels.forEach(p => p.style.display = 'none');
 
+    // Afficher le panel choisi
+    const panel = document.getElementById(panelId);
+    if(panel) {
+      panel.style.display = 'block';
+    }
+  }
+
+  // Optionnel : fermer le panel si on clique à l'extérieur
+  document.addEventListener('click', function(e) {
+    const panels = document.querySelectorAll('.mini-panel');
+    const isButton = e.target.closest('.floating-bottom-bar button');
+    const isPanel = e.target.closest('.mini-panel');
+
+    if(!isButton && !isPanel) {
+      panels.forEach(p => p.style.display = 'none');
+    }
+  });
+</script>
+  
 </body>
 </html>

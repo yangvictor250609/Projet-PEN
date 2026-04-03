@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Compte rendu projet PEN</title>
+  <meta charset="UTF-8">
+  <title>compte rendu projet PEN</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- CONTENU -->
-<div class="content">
-
-<!-- Présentation -->
-<div>
-  <div class="card">
-    <h1>Présentation</h1>
-    <p>
-      La flottabilité est la force qui permet à un objet de flotter dans l’eau ou dans l’air, 
-      elle pousse l’objet vers le haut, si cette force est plus grande que le poids de l’objet 
-      il remonte, si elle est plus faible il coule, et si elle est égale au poids il reste suspendu, 
-      c’est pour cela que les bateaux peuvent rester à la surface, les sous-marins peuvent descendre 
-      ou remonter avec leurs ballasts, et les ballons ou dirigeables peuvent s’élever dans l’air 
-      grâce à des gaz plus légers que l’air.
-    </p>
-     <h3>Données de l'expérience</h3>
-    <h2 style="color:green;">
-      Comment expliquer la flotabilité d'un système ?
-    </h2>
+  <!-- Menu principal -->
+  <div class="menu">
+    <h2>Projet PEN</h2>
+    <button onclick="showPage('Présentation')">Présentation</button>
+    <button onclick="showPage('Hypothèse')">Hypothèse</button>
+    <button onclick="showPage('Expérience 1')">Expérience 1</button>
+    <button onclick="showPage('Expérience 2')">Expérience 2</button>
+    <button onclick="showPage('Expérience 3')">Expérience 3</button>
+    <button onclick="showPage('Conclusion')">Conclusion</button>
   </div>
-</div>
 
-<!-- Hypothèse -->
-<div>
-  <div class="card">
+  <!-- Contenu principal -->
+  <div class="content">
+    <div id="Présentation" class="page active">
+      <div class="card">
+        <h1>Présentation</h1>
+        <p id="texte_presentation">La flottabilité est la force qui permet à un objet de flotter dans 
+          l’eau ou dans l’air, elle pousse l’objet vers le haut, si cette force 
+          est plus grande que le poids de l’objet il remonte, si elle est plus 
+          faible il coule, et si elle est égale au poids il reste suspendu, 
+          c’est pour cela que les bateaux peuvent rester à la surface, 
+          les sous‑marins peuvent descendre ou remonter avec leurs ballasts, 
+          et les ballons ou dirigeables peuvent s’élever dans l’air grâce à des
+          gaz plus légers que l’air.</p>
+          <script>
+            document.getElementById("texte_presentation").style.fontSize = "20px";
+            </script>
+        <h1>Problématique</h1>
+        <h3 id="texte_problematique">Comment expliquer la flotabilité d'un systéme ?</h3> 
+        <script>
+          document.getElementById("texte_problematique").style.color = "green";
+          </script>
+          <script>
+            document.getElementById("texte_problematique").style.fontSize = "22px";
+            </script>
+      </div>
+    </div>
+
+    <div id="Hypothèse" class="page">
+      <div class="card">
         <h1>Hypothèse</h1>
         <p id="texte_Hypothese">Durant notre projet, nous avons trouver et poser 2 Hypothèses :</p>
         <script>
@@ -42,10 +57,44 @@
         <h2>2._ Si on ajoute du sel dans l’eau, l’objet devrait mieux flotter qu’au début.</h2>
       </div>
     </div>
-<!-- Expérience 1 -->
-<div>
-  <div class="card">
-    <<div class="card">
+
+    <div id="Expérience 3" class="page">
+      <div class="card">
+        <h1>Expérience 3</h1>
+        <h3>Matériels utilisés</h3>
+        <p> - Un bac de 6L pouvant contenir de l’eau.</p>
+        <p> - Eau.</p>
+        <p> - 2 ballon de baudruches, dont la masse ~0g chacuns</p>
+        <p> - Du sel avec une cuillère, 121g</p>
+      </div>
+      <div class="card">
+      <h3>Données de l'expérience</h3>
+      <p>L’eau sans sel a une masse volumique de 1000g/L, 
+        ce qui correspond à 1g/cm³, et sa densité est égale à 1. 
+        Dans cette expérience,Le ballon orange est rempli d’eau 
+        présente une masse volumique de 1006g/L 
+        et une densité de 1,006. On ajoute 130g de sel dans l’eau, 
+        la masse volumique de l’eau salée atteint 1036g/L et sa densité devient 1,036. 
+        Placé dans cette eau salée, le ballon garde une masse volumique de 1006g/L, 
+        mais sa densité est alors de 0,965.</p>
+        </div>
+        <div class="card">
+        <h3>Protocole</h3>
+        <p> 1._ Remplir un premier ballons avec de l’eau et un deuxième avec de l’air</p>
+        <p> 2._ Remplir le bac avec de l’eau douce (eau du robinet).</p>
+        <p> 3._ Ajouter 130g de sel dans l’eau.</p>
+        <p> 4._ Mélanger jusqu’à ce que le sel soit bien dissous.</p>
+        <p> 5._ Déposer les deux ballons dans l’eau et observer sa position (s’il flotte peu ou s’il coule légèrement).</p>
+        <p> 6._ Observer la différence de flottaison par rapport au début.</p>
+        <h2 id="titre_protocole">RÉSULTATS ATTENDUS</h2>
+        <script>
+          document.getElementById("titre_protocole").style.color = red;
+          </script>
+      <p>Après ajout du sel, l’objet remonte davantage vers la surface et flotte mieux.</p>
+      </div>
+
+    <div id="Expérience 1" class="page">
+      <div class="card">
         <h1>Expérience 1</h1>
         <h3>Matériels utilisés :</h3>
         <p> - bac d’eau pouvant contenir de l’eau.</p>
@@ -53,8 +102,8 @@
         <p> - Farine, 3g chacuns.</p>
         <p> - bêcher, x3 avec film paraffine pour fermer</p>
       </div>
+      <h3>Données de l'expérience</h3>
       <div class="table-container">
-        <h3>Données de l'expérience</h3>
         <h3>Données</h3>
         <table id="tableau">
           <thead>
@@ -141,92 +190,127 @@
       });
       </script>
 
-<!-- Expérience 2 -->
-<div>
-  <div class="card">
-    <h1>Expérience 2</h1>
+    <div id="Conclusion" class="page">
+      <div class="card">
+        <h1>Conclusion</h1>
+        <p id="phrase_conclusion">Graces à ces expériences, nous avons montré que la flottabilité d’un système dépend du poids, 
+          du volume déplacé et de la poussée du fluide. Ces observations confirment que la stabilité 
+          et la capacité à flotter reposent sur l’équilibre entre ces paramètres.</p>
+          <script>
+            document.getElementById("phrase_conclusion").style.fontSize = "25px";
+            </script>
+      </div>
+    </div>
 
-    <p>- bac d’eau</p>
-    <p>- 3,6L d'eau</p>
-    <p>- 2 ballons</p>
 
-    <h3>Observation :</h3>
-    <p>
-      Le ballon rempli d’air flotte tandis que celui rempli d’eau coule.
-    </p>
 
-    <h3>Conclusion :</h3>
-    <p>
-      L’air est moins dense que l’eau, donc il flotte.
-    </p>
-  </div>
-</div>
-
-<!-- Expérience 3 -->
-<div>
-  <div class="card">
-        <h1>Expérience 3</h1>
-        <h3>Matériels utilisés</h3>
-        <p> - Un bac de 6L pouvant contenir de l’eau.</p>
-        <p> - Eau.</p>
-        <p> - 2 ballon de baudruches, dont la masse ~0g chacuns</p>
-        <p> - Du sel avec une cuillère, 121g</p>
+    <div id="Expérience 2" class="page">
+      <div class="card">
+        <h1>Expérience 2</h1>
+        <p>
+          <p> - bac d’eau pouvant contenir de l’eau.</p>
+          <p> - 3,6L d'eau.</p>
+          <p> - 2 ballons de baudruches, 3g chacun.</p>
+        </p>
       </div>
       <div class="card">
-      <h3>Données de l'expérience</h3>
-      <p>L’eau sans sel a une masse volumique de 1000g/L, 
-        ce qui correspond à 1g/cm³, et sa densité est égale à 1. 
-        Dans cette expérience,Le ballon orange est rempli d’eau 
-        présente une masse volumique de 1006g/L 
-        et une densité de 1,006. On ajoute 130g de sel dans l’eau, 
-        la masse volumique de l’eau salée atteint 1036g/L et sa densité devient 1,036. 
-        Placé dans cette eau salée, le ballon garde une masse volumique de 1006g/L, 
-        mais sa densité est alors de 0,965.</p>
-        </div>
-        <div class="card">
-        <h3>Protocole</h3>
-        <p> 1._ Remplir un premier ballons avec de l’eau et un deuxième avec de l’air</p>
-        <p> 2._ Remplir le bac avec de l’eau douce (eau du robinet).</p>
-        <p> 3._ Ajouter 130g de sel dans l’eau.</p>
-        <p> 4._ Mélanger jusqu’à ce que le sel soit bien dissous.</p>
-        <p> 5._ Déposer les deux ballons dans l’eau et observer sa position (s’il flotte peu ou s’il coule légèrement).</p>
-        <p> 6._ Observer la différence de flottaison par rapport au début.</p>
-        <h2 id="titre_protocole">RÉSULTATS ATTENDUS</h2>
-        <script>
-          document.getElementById("titre_protocole").style.color = red;
-          </script>
-      <p>Après ajout du sel, l’objet remonte davantage vers la surface et flotte mieux.</p>
+      <h2>Données</h2>
+      <p>On a réalisé une expérience avec trois béchers différents.
+        Le premier bécher contient uniquement de la farine : il a une 
+        masse de 223 g pour un volume de 400 mL, ce qui donne une masse 
+        volumique de 0,56 g/mL, et on observe qu’il coule.</p>
+        <p>Le deuxième bécher contient uniquement de 
+          l’air : sa masse est de 114 g pour un volume de 0,25 L,
+           donc sa masse volumique est de 0,456 g/mL, et celui-ci flotte.</p>
+        <p>Enfin, le troisième bécher contient à la 
+          fois de l’air et de la farine : il a une masse de 338g
+           et un volume de 615 mL, ce qui correspond à une masse volumique de
+            0,55 g/mL, et on constate qu’il coule, mais seulement à moitié.</p>
       </div>
+      <div class="card">
+      <h2>Protocole</h2>
+      <p>1._ Remplir le bac avec 3,6L d’eau.</p>
+      <p>2._ Gonfler un premier ballon uniquement avec de l’air et le fermer.</p>
+      <p>3._ Remplir un deuxième ballon avec de l’eau et le fermer.</p>
+      <p>4._ Déposer doucement le ballon rempli d’air à la surface de l’eau et observer ce qu’il se passe.</p>
+      <p>5._ Déposer ensuite le ballon rempli d’eau dans le bac et observer son comportement.</p>
+      <p>6._ Comparer les deux résultats.</p>
+        <h2>RÉSULTATS ATTENDUS</h2>
+        <p>—Le ballon rempli d’air flotte à la surface de l’eau.</p>
+        <p>—Le ballon rempli d’eau s’enfonce davantage et peut couler.</p>
 
-<!-- Conclusion -->
-<div>
-  <div class="card">
-    <h1>Conclusion</h1>
 
-    <p>
-      Grâce à ces expériences, nous avons montré que la flottabilité dépend du poids,
-      du volume et du fluide dans lequel se trouve l’objet.
-    </p>
-  </div>
-</div>
+      
+  <!-- Script pour changer les pages -->
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
 
-</div>
-
-<!-- SCRIPT -->
+  <!-- Barre de tâches en bas -->
+  <div class="bottom-bar">
+  <!-- Script pour changer les pages -->
 <script>
-function showPage(id) {
-  var pages = document.getElementsByClassName("page");
+  function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+</script>
 
-  for (var i = 0; i < pages.length; i++) {
-    pages[i].style.display = "none";
+<!-- Mini-panneaux déclenchés par la barre flottante -->
+<div id="mini_connaissances" class="mini-panel">
+  <h2>Connaissances fondamental sur la flotabilité</h2>
+  <p>La flottabilité repose sur le principe d’Archimède :
+    tout objet plongé dans un fluide subit une poussée vers le haut égale au poids du fluide déplacé.
+    Un objet flotte si cette poussée est plus grande que son poids, coule si elle est plus faible, et reste en équilibre si elles sont égales.
+    Ce qui compte surtout, c’est la densité (masse/volume) :
+    un objet moins dense que l’eau flotte, plus dense coule.
+    </p>
+</div>
+
+<div id="mini_remarques" class="mini-panel">
+  <h2>Remarques</h2>
+  <p>Il faut savoir qu'il existe des cas particulier sur pourquoi un objet flotte ou coule alors qu'elle n'est pas censé l'etre :</p>
+  <p>- La forme de l’objet influence sa stabilité à la surface.</p>
+  <p>- La répartition du poids peut faire chavirer un objet flottant.</p>
+  <p>- Les courants et les vagues modifient le comportement à la surface.</p>
+  <p>- La tension de surface peut faire flotter de très petits objets.</p>
+</div>
+
+<div class="floating-bottom-bar">
+  <button onclick="showMini('mini_connaissances')">Connaissances fondamental sur la flotabilité</button>
+  <button onclick="showMini('mini_remarques')">Remarques</button>
+</div>
+
+<script>
+  function showMini(panelId) {
+    // Cacher tous les mini-panels
+    const panels = document.querySelectorAll('.mini-panel');
+    panels.forEach(p => p.style.display = 'none');
+
+    // Afficher le panel choisi
+    const panel = document.getElementById(panelId);
+    if(panel) {
+      panel.style.display = 'block';
+    }
   }
 
-  document.getElementById(id).style.display = "block";
-}
+  // Optionnel : fermer le panel si on clique à l'extérieur
+  document.addEventListener('click', function(e) {
+    const panels = document.querySelectorAll('.mini-panel');
+    const isButton = e.target.closest('.floating-bottom-bar button');
+    const isPanel = e.target.closest('.mini-panel');
 
-// page par défaut
-showPage("presentation");
+    if(!isButton && !isPanel) {
+      panels.forEach(p => p.style.display = 'none');
+    }
+  });
 </script>
+
 
 </body>
 </html>

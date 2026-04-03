@@ -66,39 +66,91 @@
     <p>- bêcher x3 avec film paraffine</p>
   </div>
 
-  <div class="card">
-    <h3>Données</h3>
-    <table id="tableau">
-      <thead>
-        <tr>
-          <th>Bécher</th>
-          <th>Masse</th>
-          <th>Volume</th>
-          <th>Masse volumique</th>
-          <th>Résultat</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Tableau Données</title>
+<style>
+  body {
+    font-family: Arial;
+    background: #111;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
 
-  <div class="card">
-    <h3>Protocole</h3>
-    <p>Remplir 3 béchers de trois manières différentes :</p>
-    <ul>
-      <li>Bécher A : 223 g de farine</li>
-      <li>Bécher B : de l'air (114 g)</li>
-      <li>Bécher C : 148 g de farine (total 368 g)</li>
-    </ul>
+  .table-container {
+    background: #eee;
+    padding: 20px;
+    border-radius: 15px;
+  }
 
-    <p>Refermer les béchers</p>
-    <p>Mettre dans une bassine avec 3,6L d'eau</p>
-    <p>Observer les résultats</p>
+  h2 {
+    margin-bottom: 10px;
+  }
 
-    <h3>RÉSULTATS ATTENDUS</h3>
-    <p>La flottabilité dépend de la masse volumique</p>
-  </div>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+
+  th {
+    background: #ddd;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="table-container">
+  <h2>Données</h2>
+  <table id="tableau">
+    <thead>
+      <tr>
+        <th>Bécher</th>
+        <th>Masse</th>
+        <th>Volume</th>
+        <th>Masse volumique</th>
+        <th>Résultat</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 </div>
+
+<script>
+const donnees = [
+  ["bécher (farine)", "223 g", "400 mL", "0,56 g/mL", "coule"],
+  ["bécher (air)", "114 g", "0,25 L", "0,456 g/mL", "flotte"],
+  ["bécher (air+farine)", "338 g", "615 mL", "0,55 g/mL", "coule mais à moitié"]
+];
+
+const tbody = document.querySelector("#tableau tbody");
+
+donnees.forEach(ligne => {
+  const tr = document.createElement("tr");
+
+  ligne.forEach(cellule => {
+    const td = document.createElement("td");
+    td.textContent = cellule;
+    tr.appendChild(td);
+  });
+
+  tbody.appendChild(tr);
+});
+</script>
+
+</body>
+</html>
 
 <!-- Expérience 2 -->
 <div id="Experience2" class="page">

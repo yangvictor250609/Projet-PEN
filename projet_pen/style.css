@@ -2,11 +2,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  height: 100vh;
   background: #f5f6fa;
   color: #333;
-  flex-direction: column;
 }
 
 /* ===== Menu fixe à gauche ===== */
@@ -16,9 +13,9 @@ body {
   color: white;
   padding: 20px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
 }
 
@@ -26,20 +23,17 @@ body {
   text-align: center;
   margin-bottom: 30px;
   font-size: 24px;
-  letter-spacing: 1px;
 }
 
 .menu button {
+  width: 100%;
   padding: 12px;
   margin-bottom: 12px;
   border: none;
   background-color: #353b48;
   color: white;
   cursor: pointer;
-  text-align: left;
   border-radius: 5px;
-  transition: 0.3s;
-  font-size: 16px;
 }
 
 .menu button:hover {
@@ -48,14 +42,11 @@ body {
 
 /* ===== Contenu principal ===== */
 .content {
-  margin-left: 220px; /* espace pour le menu */
+  margin-left: 220px;
   padding: 30px;
-  flex: 1;
-  overflow-y: auto;
-  margin-bottom: 60px; /* espace pour barre principale */
 }
 
-/* ===== Pages séparées ===== */
+/* ===== Pages ===== */
 .page {
   display: none;
 }
@@ -64,7 +55,7 @@ body {
   display: block;
 }
 
-/* ===== Cartes pour chaque page ===== */
+/* ===== Cartes ===== */
 .card {
   background-color: white;
   padding: 20px;
@@ -74,42 +65,7 @@ body {
   margin-bottom: 20px;
 }
 
-.card h1 {
-  margin-top: 0;
-  color: #2f3640;
-}
-
-/* ===== Barre principale en bas (large) ===== */
-.bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 220px; /* commence après le menu */
-  right: 0;
-  height: 60px;
-  background-color: #2f3640;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  gap: 10px;
-  box-shadow: 0px -3px 10px rgba(0,0,0,0.2);
-  z-index: 100;
-}
-
-.bottom-bar button {
-  padding: 10px 15px;
-  border: none;
-  background-color: #353b48;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.bottom-bar button:hover {
-  background-color: #40739e;
-}
-
-/* ===== Barre flottante fine en bas ===== */
+/* ===== Barre flottante ===== */
 .floating-bottom-bar {
   position: fixed;
   bottom: 10px;
@@ -120,7 +76,6 @@ body {
   border-radius: 12px;
   display: flex;
   gap: 10px;
-  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
   z-index: 200;
 }
 
@@ -131,55 +86,40 @@ body {
   color: white;
   cursor: pointer;
   border-radius: 8px;
-  transition: 0.3s;
-  font-size: 14px;
 }
 
 .floating-bottom-bar button:hover {
   background-color: #40739e;
 }
 
-/* ===== Mini-panels au-dessus de la barre flottante ===== */
+/* ===== Mini-panels ===== */
 .mini-panel {
   position: fixed;
-  bottom: 60px; /* juste au-dessus de la barre flottante principale */
+  bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%; /* large mais pas tout l'écran */
-  max-height: 50%; /* moitié écran */
+  width: 90%;
+  max-height: 50%;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0px -3px 15px rgba(0,0,0,0.2);
   padding: 20px;
   overflow-y: auto;
-  display: none; /* caché par défaut */
+  display: none;
   z-index: 300;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
 
   .menu {
+    position: relative;
     width: 100%;
     height: auto;
-    position: relative;
   }
 
   .content {
     margin-left: 0;
-    margin-bottom: 100px; /* espace pour barre principale et flottante */
-  }
-
-  .bottom-bar {
-    left: 0;
-    right: 0;
-  }
-
-  .floating-bottom-bar {
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 20px;
   }
 }

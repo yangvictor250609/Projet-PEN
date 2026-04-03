@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div id="Expérience 3 : Le sek, un élement aidant à la flottabilité d'un système" class="page">
+    <div id="Expérience 3" class="page">
       <div class="card">
         <h1>Expérience 3</h1>
         <h3>Matériels utilisés</h3>
@@ -77,8 +77,8 @@
         la masse volumique de l’eau salée atteint 1036g/L et sa densité devient 1,036. 
         Placé dans cette eau salée, le ballon garde une masse volumique de 1006g/L, 
         mais sa densité est alors de 0,965.</p>
-      </div>
-      <div class="card">
+        </div>
+        <div class="card">
         <h3>Protocole</h3>
         <p> 1._ Remplir un premier ballons avec de l’eau et un deuxième avec de l’air</p>
         <p> 2._ Remplir le bac avec de l’eau douce (eau du robinet).</p>
@@ -101,24 +101,28 @@
               de devenir supérieure au poids du ballon, ainsi celui-ci devient plus “léger” que le 
               liquide salé qui l’entoure et qui permet d’expliquer pourquoi le sel augmente la flottabilité
             </p>
+      
+            <div class="images">
+      
+              <div class="left-img">
+                <div class="img-box">schéma 1</div>
+                <div class="img-box">schéma 2</div>
+              </div>
+      
+              <div class="right-img">
+                <div class="img-box big">expérience</div>
+              </div>
+      
+            </div>
+      
           </div>
+      
         </div>
-      </div> 
-    </div>
-
-      <div id="Conclusion" class="page">
-      <div class="card">
-        <h1>Conclusion</h1>
-        <p id="phrase_conclusion">Graces à ces expériences, nous avons montré que la flottabilité d’un système dépend du poids, 
-          du volume déplacé et de la poussée du fluide. Ces observations confirment que la stabilité 
-          et la capacité à flotter reposent sur l’équilibre entre ces paramètres.</p>
-          <script>
-            document.getElementById("phrase_conclusion").style.fontSize = "25px";
-            </script>
+      
       </div>
-    </div>
+ </div>
 
-    <div id="Expérience 1 : La masse volumique d'un système" class="page">
+    <div id="Expérience 1" class="page">
       <div class="card">
         <h1>Expérience 1</h1>
         <h3>Matériels utilisés :</h3>
@@ -260,7 +264,90 @@
     </div>
     </div>
 
-    <div id="Expérience 2 : La flotabilité du corps humain" class="page">
+
+    <div id="Conclusion" class="page">
+      <div class="card">
+        <h1>Conclusion</h1>
+        <p id="phrase_conclusion">Graces à ces expériences, nous avons montré que la flottabilité d’un système dépend du poids, 
+          du volume déplacé et de la poussée du fluide. Ces observations confirment que la stabilité 
+          et la capacité à flotter reposent sur l’équilibre entre ces paramètres.</p>
+          <script>
+            document.getElementById("phrase_conclusion").style.fontSize = "25px";
+            </script>
+      </div>
+    </div>
+      
+  <!-- Script pour changer les pages -->
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+  <!-- Barre de tâches en bas -->
+  <div class="bottom-bar">
+  <!-- Script pour changer les pages -->
+<script>
+  function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+</script>
+
+<!-- Mini-panneaux déclenchés par la barre flottante -->
+<div id="mini_connaissances" class="mini-panel">
+  <h2>Connaissances fondamental sur la flotabilité</h2>
+  <p>La flottabilité repose sur le principe d’Archimède :
+    tout objet plongé dans un fluide subit une poussée vers le haut égale au poids du fluide déplacé.
+    Un objet flotte si cette poussée est plus grande que son poids, coule si elle est plus faible, et reste en équilibre si elles sont égales.
+    Ce qui compte surtout, c’est la densité (masse/volume) :
+    un objet moins dense que l’eau flotte, plus dense coule.
+    </p>
+</div>
+
+<div id="mini_remarques" class="mini-panel">
+  <h2>Remarques</h2>
+  <p>Il faut savoir qu'il existe des cas particulier sur pourquoi un objet flotte ou coule alors qu'elle n'est pas censé l'etre :</p>
+  <p>- La forme de l’objet influence sa stabilité à la surface.</p>
+  <p>- La répartition du poids peut faire chavirer un objet flottant.</p>
+  <p>- Les courants et les vagues modifient le comportement à la surface.</p>
+  <p>- La tension de surface peut faire flotter de très petits objets.</p>
+</div>
+
+<div class="floating-bottom-bar">
+  <button onclick="showMini('mini_connaissances')">Connaissances fondamental sur la flotabilité</button>
+  <button onclick="showMini('mini_remarques')">Remarques</button>
+</div>
+
+<script>
+  function showMini(panelId) {
+    // Cacher tous les mini-panels
+    const panels = document.querySelectorAll('.mini-panel');
+    panels.forEach(p => p.style.display = 'none');
+
+    // Afficher le panel choisi
+    const panel = document.getElementById(panelId);
+    if(panel) {
+      panel.style.display = 'block';
+    }
+  }
+
+  // Optionnel : fermer le panel si on clique à l'extérieur
+  document.addEventListener('click', function(e) {
+    const panels = document.querySelectorAll('.mini-panel');
+    const isButton = e.target.closest('.floating-bottom-bar button');
+    const isPanel = e.target.closest('.mini-panel');
+
+    if(!isButton && !isPanel) {
+      panels.forEach(p => p.style.display = 'none');
+    }
+  });
+</script>
+
+   <div id="Expérience 2" class="page">
       <div class="card">
         <h1>Expérience 2</h1>
         <p>
@@ -341,76 +428,9 @@
       
         </div>
       </div>
-      
-  <!-- Script pour changer les pages -->
-  <script>
-    function showPage(pageId) {
-      const pages = document.querySelectorAll('.page');
-      pages.forEach(page => page.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-    }
-  </script>
+    </div>
+    </div>
 
-  <!-- Barre de tâches en bas -->
-  <div class="bottom-bar">
-  <!-- Script pour changer les pages -->
-<script>
-  function showPage(pageId) {
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(page => page.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-  }
-</script>
-
-<!-- Mini-panneaux déclenchés par la barre flottante -->
-<div id="mini_connaissances" class="mini-panel">
-  <h2>Connaissances fondamental sur la flotabilité</h2>
-  <p>La flottabilité repose sur le principe d’Archimède :
-    tout objet plongé dans un fluide subit une poussée vers le haut égale au poids du fluide déplacé.
-    Un objet flotte si cette poussée est plus grande que son poids, coule si elle est plus faible, et reste en équilibre si elles sont égales.
-    Ce qui compte surtout, c’est la densité (masse/volume) :
-    un objet moins dense que l’eau flotte, plus dense coule.
-    </p>
-</div>
-
-<div id="mini_remarques" class="mini-panel">
-  <h2>Remarques</h2>
-  <p>Il faut savoir qu'il existe des cas particulier sur pourquoi un objet flotte ou coule alors qu'elle n'est pas censé l'etre :</p>
-  <p>- La forme de l’objet influence sa stabilité à la surface.</p>
-  <p>- La répartition du poids peut faire chavirer un objet flottant.</p>
-  <p>- Les courants et les vagues modifient le comportement à la surface.</p>
-  <p>- La tension de surface peut faire flotter de très petits objets.</p>
-</div>
-
-<div class="floating-bottom-bar">
-  <button onclick="showMini('mini_connaissances')">Connaissances fondamental sur la flotabilité</button>
-  <button onclick="showMini('mini_remarques')">Remarques</button>
-</div>
-
-<script>
-  function showMini(panelId) {
-    // Cacher tous les mini-panels
-    const panels = document.querySelectorAll('.mini-panel');
-    panels.forEach(p => p.style.display = 'none');
-
-    // Afficher le panel choisi
-    const panel = document.getElementById(panelId);
-    if(panel) {
-      panel.style.display = 'block';
-    }
-  }
-
-  // Optionnel : fermer le panel si on clique à l'extérieur
-  document.addEventListener('click', function(e) {
-    const panels = document.querySelectorAll('.mini-panel');
-    const isButton = e.target.closest('.floating-bottom-bar button');
-    const isPanel = e.target.closest('.mini-panel');
-
-    if(!isButton && !isPanel) {
-      panels.forEach(p => p.style.display = 'none');
-    }
-  });
-</script>
 
 
 </body>

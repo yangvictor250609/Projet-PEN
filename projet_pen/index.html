@@ -1,419 +1,273 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>compte rendu projet PEN</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Compte rendu projet PEN</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  display: flex;
+}
+
+/* MENU */
+.menu {
+  width: 220px;
+  background: #222;
+  color: white;
+  padding: 15px;
+}
+
+.menu button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  background: #444;
+  color: white;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background: #666;
+}
+
+/* CONTENU */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* PAGES */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* CARTES */
+.card {
+  background: #f2f2f2;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* TABLEAU */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* MINI PANELS */
+.mini-panel {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 2px solid #333;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* BARRE BAS */
+.floating-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #222;
+  padding: 10px;
+  text-align: center;
+}
+
+.floating-bottom-bar button {
+  margin: 5px;
+  padding: 10px;
+  background: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+
 </head>
 <body>
 
-  <!-- Menu principal -->
-  <div class="menu">
-    <h2>Projet PEN</h2>
-    <button onclick="showPage('Présentation')">Présentation</button>
-    <button onclick="showPage('Hypothèse')">Hypothèse</button>
-    <button onclick="showPage('Expérience 1')">Expérience 1</button>
-    <button onclick="showPage('Expérience 2')">Expérience 2</button>
-    <button onclick="showPage('Expérience 3')">Expérience 3</button>
-    <button onclick="showPage('Conclusion')">Conclusion</button>
-  </div>
+<!-- MENU -->
+<div class="menu">
+  <h2>Projet PEN</h2>
+  <button onclick="showPage('presentation')">Présentation</button>
+  <button onclick="showPage('hypothese')">Hypothèse</button>
+  <button onclick="showPage('exp1')">Expérience 1</button>
+  <button onclick="showPage('exp2')">Expérience 2</button>
+  <button onclick="showPage('exp3')">Expérience 3</button>
+  <button onclick="showPage('conclusion')">Conclusion</button>
+</div>
 
-  <!-- Contenu principal -->
-  <div class="content">
-    <div id="Présentation" class="page active">
-      <div class="card">
-        <h1>Présentation</h1>
-        <p id="texte_presentation">La flottabilité est la force qui permet à un objet de flotter dans 
-          l’eau ou dans l’air, elle pousse l’objet vers le haut, si cette force 
-          est plus grande que le poids de l’objet il remonte, si elle est plus 
-          faible il coule, et si elle est égale au poids il reste suspendu, 
-          c’est pour cela que les bateaux peuvent rester à la surface, 
-          les sous‑marins peuvent descendre ou remonter avec leurs ballasts, 
-          et les ballons ou dirigeables peuvent s’élever dans l’air grâce à des
-          gaz plus légers que l’air.</p>
-          <script>
-            document.getElementById("texte_presentation").style.fontSize = "20px";
-            </script>
-        <h1>Problématique</h1>
-        <h3 id="texte_problematique">Comment expliquer la flotabilité d'un systéme ?</h3> 
-        <script>
-          document.getElementById("texte_problematique").style.color = "green";
-          </script>
-          <script>
-            document.getElementById("texte_problematique").style.fontSize = "22px";
-            </script>
-      </div>
-    </div>
+<!-- CONTENU -->
+<div class="content">
 
-    <div id="Hypothèse" class="page">
-      <div class="card">
-        <h1>Hypothèse</h1>
-        <p id="texte_Hypothese">Durant notre projet, nous avons trouver et poser 2 Hypothèses :</p>
-        <script>
-          document.getElementById("texte_Hypothese").style.fontSize = "20px";
-          </script>
-        <h2> 1._ On suppose que grace au poussée d'Archimède un objet ou être vivant 
-          a la capacité de flotter sur l'eau flotter dans une surface liquide</h2>
-        <h2>2._ Si on ajoute du sel dans l’eau, l’objet devrait mieux flotter qu’au début.</h2>
-      </div>
-    </div>
-
-    <div id="Expérience 3 : Le sek, un élement aidant à la flottabilité d'un système" class="page">
-      <div class="card">
-        <h1>Expérience 3</h1>
-        <h3>Matériels utilisés</h3>
-        <p> - Un bac de 6L pouvant contenir de l’eau.</p>
-        <p> - Eau.</p>
-        <p> - 2 ballon de baudruches, dont la masse ~0g chacuns</p>
-        <p> - Du sel avec une cuillère, 121g</p>
-      </div>
-      <div class="card">
-      <h3>Données de l'expérience</h3>
-      <p>L’eau sans sel a une masse volumique de 1000g/L, 
-        ce qui correspond à 1g/cm³, et sa densité est égale à 1. 
-        Dans cette expérience,Le ballon orange est rempli d’eau 
-        présente une masse volumique de 1006g/L 
-        et une densité de 1,006. On ajoute 130g de sel dans l’eau, 
-        la masse volumique de l’eau salée atteint 1036g/L et sa densité devient 1,036. 
-        Placé dans cette eau salée, le ballon garde une masse volumique de 1006g/L, 
-        mais sa densité est alors de 0,965.</p>
-      </div>
-      <div class="card">
-        <h3>Protocole</h3>
-        <p> 1._ Remplir un premier ballons avec de l’eau et un deuxième avec de l’air</p>
-        <p> 2._ Remplir le bac avec de l’eau douce (eau du robinet).</p>
-        <p> 3._ Ajouter 130g de sel dans l’eau.</p>
-        <p> 4._ Mélanger jusqu’à ce que le sel soit bien dissous.</p>
-        <p> 5._ Déposer les deux ballons dans l’eau et observer sa position (s’il flotte peu ou s’il coule légèrement).</p>
-        <p> 6._ Observer la différence de flottaison par rapport au début.</p>
-        <h2 id="titre_protocole">RÉSULTATS ATTENDUS</h2>
-        <script>
-          document.getElementById("titre_protocole").style.color = red;
-          </script>
-      <p>Après ajout du sel, l’objet remonte davantage vers la surface et flotte mieux.</p>
-      </div>
-      <div class="slide">
-        <div class="content">
-          <div class="card">
-          <h1>EXPLICATION</h1>
-            <p class="main-text">
-              La densité du liquide passe de 1,000 à 1,036. Cela permet à la poussée d’archimède 
-              de devenir supérieure au poids du ballon, ainsi celui-ci devient plus “léger” que le 
-              liquide salé qui l’entoure et qui permet d’expliquer pourquoi le sel augmente la flottabilité
-            </p>
-          </div>
-        </div>
-      </div> 
-    </div>
-
-    <div id="Conclusion" class="page">
-      <div class="card">
-        <h1>Conclusion</h1>
-        <p id="phrase_conclusion">Graces à ces expériences, nous avons montré que la flottabilité d’un système dépend du poids, 
-          du volume déplacé et de la poussée du fluide. Ces observations confirment que la stabilité 
-          et la capacité à flotter reposent sur l’équilibre entre ces paramètres.</p>
-          <script>
-            document.getElementById("phrase_conclusion").style.fontSize = "25px";
-            </script>
-       </div>
-     </div>
-
-    <div id="Expérience 1 : La masse volumique d'un système" class="page">
-      <div class="card">
-        <h1>Expérience 1</h1>
-        <h3>Matériels utilisés :</h3>
-        <p> - bac d’eau pouvant contenir de l’eau.</p>
-        <p> - 3,6L d'eau.</p>
-        <p> - Farine, 3g chacuns.</p>
-        <p> - bêcher, x3 avec film paraffine pour fermer</p>
-      </div>
-      <h3>Données de l'expérience</h3>
-      <div class="table-container">
-        <h3>Données</h3>
-        <table id="tableau">
-          <thead>
-            <tr>
-              <th>Bécher</th>
-              <th>Masse</th>
-              <th>Volume</th>
-              <th>Masse volumique</th>
-              <th>Résultat</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <div id="protocole"></div>
-        <h3>Protocole</h3>
-        <div class="card">
-        <p>Remplir 3 béchers de trois manières différentes :</p>
-        <ul>
-          <li>Bécher A : 223 g de farine</li>
-          <li>Bécher B : de l'air (114 g)</li>
-          <li>Bécher C : 148 g de farine (total 368 g)</li>
-        </ul>
-      
-        <p>Refermer les béchers avec du film de paraffine</p>
-        <p>Mettre les béchers dans une bassine contenant 3,6 L d'eau</p>
-        <p>Observer les résultats</p>
-      
-        <h3>RÉSULTATS ATTENDUS</h3>
-        <p>La flottabilité dépend de la masse volumique</p>
-      </div>
-
-      <style>
-      .table-container {
-        background: white; /* pas de fond noir */
-        padding: 20px;
-        border-radius: 15px;
-        width: fit-content;
-      }
-      
-      /* Titre */
-      .table-container h2 {
-        margin-bottom: 10px;
-      }
-      
-      /* Tableau */
-      #tableau {
-        border-collapse: collapse;
-        background: white;
-      }
-      
-      /* Cellules */
-      #tableau th, #tableau td {
-        padding: 10px;
-        text-align: center;
-        border-bottom: 1px solid #ccc;
-      }
-      
-      /* En-tête */
-      #tableau th {
-        background: #f2f2f2;
-      }
-      </style>
-      
-      <script>
-      const donnees = [
-        ["bécher (farine)", "223 g", "400 mL", "0,56 g/mL", "coule"],
-        ["bécher (air)", "114 g", "0,25 L", "0,456 g/mL", "flotte"],
-        ["bécher (air+farine)", "338 g", "615 mL", "0,55 g/mL", "coule mais à moitié"]
-      ];
-      
-      const tbody = document.querySelector("#tableau tbody");
-      
-      donnees.forEach(ligne => {
-        const tr = document.createElement("tr");
-      
-        ligne.forEach(cellule => {
-          const td = document.createElement("td");
-          td.textContent = cellule;
-          tr.appendChild(td);
-        });
-      
-        tbody.appendChild(tr);
-      });
-      </script>
-      <div class="slide">
-        <div class="content">
-          <div class="card">
-          <h1>Explication de la flottaison</h1>
-      
-          <p class="intro">
-            Un objet flotte si sa densité totale est inférieure à celle de l’eau.
-            Grâce à l’air emprisonné, la poussée d’Archimède devient plus forte que le poids,
-            ce qui permet même à un objet lourd de rester en surface.
-          </p>
-      
-          <div class="grid">
-      
-            <div class="left">
-              <h2>LE PRINCIPE D’ARCHIMÈDE</h2>
-              <div class="formula">FA = ρeau · g · Vimmergé</div>
-      
-              <div class="box">
-                <div class="diagram">
-                  <div class="water"></div>
-                  <div class="object"></div>
-      
-                  <div class="arrow up">↑</div>
-                  <div class="arrow down">↓</div>
-                </div>
-      
-                <div class="text">
-                  La force que l’eau exerce vers le haut sur tout objet immergé.<br><br>
-                  Plus l’objet déplace d’eau, plus cette force est grande.<br><br>
-                  Si cette poussée est supérieure au poids de l’objet, il flotte ; sinon, il coule.
-                </div>
-              </div>
-            </div>
-      
-            <div class="right">
-              En enfermant de l’air dans un objet, on augmente son volume
-              sans augmenter son poids.
-            </div>
-      
-          </div>
-      
-        </div>
-      </div>
-    </div>
-
-    <div id="Expérience 2 : La flotabilité du corps humain" class="page">
-      <div class="card">
-        <h1>Expérience 2</h1>
-        <p>
-          <p> - bac d’eau pouvant contenir de l’eau.</p>
-          <p> - 3,6L d'eau.</p>
-          <p> - 2 ballons de baudruches, 3g chacun.</p>
-        </p>
-      </div>
-      <div class="card">
-      <h2>Données</h2>
-      <p>On a réalisé une expérience avec trois béchers différents.
-        Le premier bécher contient uniquement de la farine : il a une 
-        masse de 223 g pour un volume de 400 mL, ce qui donne une masse 
-        volumique de 0,56 g/mL, et on observe qu’il coule.</p>
-        <p>Le deuxième bécher contient uniquement de 
-          l’air : sa masse est de 114 g pour un volume de 0,25 L,
-           donc sa masse volumique est de 0,456 g/mL, et celui-ci flotte.</p>
-        <p>Enfin, le troisième bécher contient à la 
-          fois de l’air et de la farine : il a une masse de 338g
-           et un volume de 615 mL, ce qui correspond à une masse volumique de
-            0,55 g/mL, et on constate qu’il coule, mais seulement à moitié.</p>
-      </div>
-      <div class="card">
-      <h2>Protocole</h2>
-      <p>1._ Remplir le bac avec 3,6L d’eau.</p>
-      <p>2._ Gonfler un premier ballon uniquement avec de l’air et le fermer.</p>
-      <p>3._ Remplir un deuxième ballon avec de l’eau et le fermer.</p>
-      <p>4._ Déposer doucement le ballon rempli d’air à la surface de l’eau et observer ce qu’il se passe.</p>
-      <p>5._ Déposer ensuite le ballon rempli d’eau dans le bac et observer son comportement.</p>
-      <p>6._ Comparer les deux résultats.</p>
-        <h2>RÉSULTATS ATTENDUS</h2>
-        <p>—Le ballon rempli d’air flotte à la surface de l’eau.</p>
-        <p>—Le ballon rempli d’eau s’enfonce davantage et peut couler.</p>
-      </div>
-      <div class="slide">
-
-        <div class="content">
-          <div class="card">
-          <h1>capacité d’un corps à flotter</h1>
-      
-          <div class="lines">
-            <div class="line left"></div>
-            <div class="line right"></div>
-          </div>
-      
-          <div class="grid">
-      
-            <!-- GAUCHE -->
-            <div class="left">
-              <h2>LE PRINCIPE D’ARCHIMEDE</h2>
-              <div class="formula">FA = ρeau · g · Vimmergé</div>
-      
-              <div class="diagram">
-                <div class="water"></div>
-                <div class="object"></div>
-                <div class="arrow up">↑</div>
-                <div class="arrow down">↓</div>
-              </div>
-            </div>
-      
-            <!-- DROITE -->
-            <div class="right">
-              <h2>DENSITE D’UN SYSTEME</h2>
-      
-              <p class="small">
-                par rapport à celle de l’eau<br>
-                ρ = V / m
-              </p>
-      
-              <div class="list">
-                <p>d = 1,0</p>
-                <p>d &lt; 1 → flotte</p>
-                <p>d &gt; 1 → coule</p>
-              </div>
-            </div>
-      
-          </div>
-      
-        </div>
-      </div>
-    </div>
-    </div>
-
-      
-  <!-- Script pour changer les pages -->
-  <script>
-    function showPage(pageId) {
-      const pages = document.querySelectorAll('.page');
-      pages.forEach(page => page.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-    }
-  </script>
-
-  <!-- Barre de tâches en bas -->
-  <div class="bottom-bar">
-  <!-- Script pour changer les pages -->
-<script>
-  function showPage(pageId) {
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(page => page.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-  }
-</script>
-
-<!-- Mini-panneaux déclenchés par la barre flottante -->
-<div id="mini_connaissances" class="mini-panel">
-  <h2>Connaissances fondamental sur la flotabilité</h2>
-  <p>La flottabilité repose sur le principe d’Archimède :
-    tout objet plongé dans un fluide subit une poussée vers le haut égale au poids du fluide déplacé.
-    Un objet flotte si cette poussée est plus grande que son poids, coule si elle est plus faible, et reste en équilibre si elles sont égales.
-    Ce qui compte surtout, c’est la densité (masse/volume) :
-    un objet moins dense que l’eau flotte, plus dense coule.
+<!-- PRESENTATION -->
+<div id="presentation" class="page active">
+  <div class="card">
+    <h1>Présentation</h1>
+    <p style="font-size:20px;">
+      La flottabilité est la force qui permet à un objet de flotter dans l’eau ou dans l’air.
+      Si cette force est plus grande que le poids, l’objet remonte, sinon il coule.
     </p>
+
+    <h2 style="color:green;">Problématique</h2>
+    <p style="font-size:22px;">
+      Comment expliquer la flottabilité d'un système ?
+    </p>
+  </div>
+</div>
+
+<!-- HYPOTHESE -->
+<div id="hypothese" class="page">
+  <div class="card">
+    <h1>Hypothèse</h1>
+    <p style="font-size:20px;">Nous avons formulé deux hypothèses :</p>
+
+    <p>1. La poussée d’Archimède permet à un objet de flotter.</p>
+    <p>2. Ajouter du sel améliore la flottabilité.</p>
+  </div>
+</div>
+
+<!-- EXPERIENCE 1 -->
+<div id="exp1" class="page">
+  <div class="card">
+    <h1>Expérience 1</h1>
+    <h3>Matériel</h3>
+    <p>Bécher, eau, farine</p>
+
+    <h3>Données</h3>
+    <table>
+      <tr>
+        <th>Bécher</th>
+        <th>Masse</th>
+        <th>Volume</th>
+        <th>Masse volumique</th>
+        <th>Résultat</th>
+      </tr>
+      <tr>
+        <td>Farine</td>
+        <td>223g</td>
+        <td>400mL</td>
+        <td>0,56</td>
+        <td>Coule</td>
+      </tr>
+      <tr>
+        <td>Air</td>
+        <td>114g</td>
+        <td>250mL</td>
+        <td>0,456</td>
+        <td>Flotte</td>
+      </tr>
+      <tr>
+        <td>Air + farine</td>
+        <td>338g</td>
+        <td>615mL</td>
+        <td>0,55</td>
+        <td>Coule à moitié</td>
+      </tr>
+    </table>
+
+    <p><b>Conclusion :</b> la masse volumique détermine la flottabilité.</p>
+  </div>
+</div>
+
+<!-- EXPERIENCE 2 -->
+<div id="exp2" class="page">
+  <div class="card">
+    <h1>Expérience 2</h1>
+
+    <p>Ballon avec air → flotte</p>
+    <p>Ballon avec eau → coule</p>
+
+    <p><b>Explication :</b> l’air réduit la densité globale.</p>
+  </div>
+</div>
+
+<!-- EXPERIENCE 3 -->
+<div id="exp3" class="page">
+  <div class="card">
+    <h1>Expérience 3</h1>
+
+    <p>Ajout de sel dans l’eau</p>
+
+    <p style="color:red;">Résultat attendu :</p>
+    <p>Le ballon flotte mieux dans l’eau salée.</p>
+
+    <p>
+      L’eau salée est plus dense → poussée d’Archimède plus forte.
+    </p>
+  </div>
+</div>
+
+<!-- CONCLUSION -->
+<div id="conclusion" class="page">
+  <div class="card">
+    <h1>Conclusion</h1>
+
+    <p style="font-size:22px;">
+      La flottabilité dépend de la masse volumique et de la poussée d’Archimède.
+    </p>
+  </div>
+</div>
+
+</div>
+
+<!-- MINI PANELS -->
+<div id="mini_connaissances" class="mini-panel">
+  <h2>Connaissances</h2>
+  <p>
+    Tout objet immergé subit une poussée vers le haut égale au poids du fluide déplacé.
+  </p>
 </div>
 
 <div id="mini_remarques" class="mini-panel">
   <h2>Remarques</h2>
-  <p>Il faut savoir qu'il existe des cas particulier sur pourquoi un objet flotte ou coule alors qu'elle n'est pas censé l'etre :</p>
-  <p>- La forme de l’objet influence sa stabilité à la surface.</p>
-  <p>- La répartition du poids peut faire chavirer un objet flottant.</p>
-  <p>- Les courants et les vagues modifient le comportement à la surface.</p>
-  <p>- La tension de surface peut faire flotter de très petits objets.</p>
+  <p>- La forme influence la flottabilité</p>
+  <p>- La répartition du poids est importante</p>
 </div>
 
+<!-- BARRE BAS -->
 <div class="floating-bottom-bar">
-  <button onclick="showMini('mini_connaissances')">Connaissances fondamental sur la flotabilité</button>
+  <button onclick="showMini('mini_connaissances')">Connaissances</button>
   <button onclick="showMini('mini_remarques')">Remarques</button>
 </div>
 
+<!-- SCRIPT -->
 <script>
-  function showMini(panelId) {
-    // Cacher tous les mini-panels
-    const panels = document.querySelectorAll('.mini-panel');
-    panels.forEach(p => p.style.display = 'none');
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
 
-    // Afficher le panel choisi
-    const panel = document.getElementById(panelId);
-    if(panel) {
-      panel.style.display = 'block';
-    }
+function showMini(id) {
+  document.querySelectorAll('.mini-panel').forEach(p => p.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.floating-bottom-bar') && !e.target.closest('.mini-panel')) {
+    document.querySelectorAll('.mini-panel').forEach(p => p.style.display = 'none');
   }
-
-  // Optionnel : fermer le panel si on clique à l'extérieur
-  document.addEventListener('click', function(e) {
-    const panels = document.querySelectorAll('.mini-panel');
-    const isButton = e.target.closest('.floating-bottom-bar button');
-    const isPanel = e.target.closest('.mini-panel');
-
-    if(!isButton && !isPanel) {
-      panels.forEach(p => p.style.display = 'none');
-    }
-  });
+});
 </script>
-
 
 </body>
 </html>
